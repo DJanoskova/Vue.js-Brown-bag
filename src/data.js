@@ -145,3 +145,69 @@ export default {
   }
 }
 </script>`
+
+export const buttonPickerSource = `<template>
+  <div>
+    <button v-for="instance in data"
+      type="button"
+      :key="instance.label"
+      @click="model = instance.value"
+      :class="{active: model === instance.value}">
+      {{ instance.title }}
+    </button>
+  </div>
+</template>
+
+<script>
+import ButtonPicker from './ButtonPicker'
+
+export default {
+  props: {
+    value: {
+      type: String,
+      default: ''
+    },
+    data: {
+      type: Array
+    }
+  },
+  data () {
+    return {
+      model: this.value
+    }
+  },
+  watch: {
+    model () {
+      this.$emit('input', this.model)
+    }
+  }
+}
+</script>`
+
+export const buttonPickerParentSource = `<template>
+  <ButtonPicker v-model="flower" :data="options" />
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      flower: 'rose',
+      options: [
+        {
+          title: 'Rose', value: 'rose'
+        },
+        {
+          title: 'Lily', value: 'lily'
+        },
+        {
+          title: 'Sunflower', value: 'sunflower'
+        },
+        {
+          title: 'Cactus', value: 'they-are-beautiful-too'
+        }
+      ]
+    }
+  }
+}
+</script>`

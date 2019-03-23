@@ -15,7 +15,7 @@
       </div>
       <div class="col-12 col-lg-6">
         <span class="small text-muted">ChildComponent.vue</span>
-        <Codemirror v-model="childComponent" />
+        <Codemirror v-model="childComponent" lang="html" />
       </div>
     </div>
   </div>
