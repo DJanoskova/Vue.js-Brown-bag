@@ -1,0 +1,32 @@
+html {
+  font-size: 25px;
+}
+
+.site-title {
+  background: $primary;
+  color: #ffffff;
+  font-size: 1.2rem;
+  padding: 0.8rem;
+}
+
+.card {
+  padding: 1rem;
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+}
+
+pre {
+  padding: 0 0.5rem;
+  font-size: 0.8rem;
+  border-radius: 1rem;
+}
+
+.vue-codemirror {
+  padding: 0.5rem;
+  background: #304148;
+  border-radius: 0.5rem;
+}
+
+.text-muted {
+  color: rgb(190, 190, 190) !important
+}
