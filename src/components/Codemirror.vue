@@ -27,8 +27,7 @@ export default {
       default: 'javascript'
     },
     height: {
-      type: Number || String,
-      default: 'auto'
+      type: Number
     }
   },
   data () {

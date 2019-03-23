@@ -1,5 +1,3 @@
-import React from "react";
-
 export const basicFormHtml = `<template>
   <form>
     <input type="text" v-model="person.name">
@@ -108,3 +106,42 @@ export const basicFormReact2 = `const awesomeForm = () => {
   );
 }
 `
+
+export const parentEmit = `<template>
+  <ChildComponent @onHourPassed="handleHourPassed">
+</template>
+
+<script>
+export default {
+  methods: {
+    handleHourPassed (minutes) {
+      this.saveThisImportantInformation(minutes)
+    }
+  }
+}
+</script>`
+
+export const childEmit = `<template>
+  <p>
+    You've been watching for {{ minutes }} minutes.
+    Get up, do something!
+  </p>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      minutes: 0
+    }
+  },
+  created () {
+    setInterval(() => {
+      this.minutes++
+      if (this.minutes % 60 === 0) {
+        this.$emit('handleHourPassed', this.minutes)
+      }
+    }, 60000);
+  }
+}
+</script>`

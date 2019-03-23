@@ -37,9 +37,9 @@ export default {
             'Emitting events',
             'Named routes',
             'Webpack configuration',
+            'Vue DevTools',
             'Stuff gets done faster',
-            'React\'s and Angular\'s love child 👨‍❤️‍👨',
-            'The future'
+            'React\'s and Angular\'s love child 👨‍❤️‍👨'
           ]
         },
         {
