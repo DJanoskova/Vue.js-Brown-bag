@@ -36,6 +36,7 @@ export default {
             'Form handling and v-model',
             'Emitting events',
             'Named routes',
+            'Webpack configuration',
             'Stuff gets done faster',
             'React\'s and Angular\'s love child 👨‍❤️‍👨',
             'The future'
