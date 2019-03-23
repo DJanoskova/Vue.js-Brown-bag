@@ -25,8 +25,8 @@ export default {
   methods: {
     handleKeydown (event) {
       const { key, keyCode } = event
-      const isRight = key === 'ArrowUp' || keyCode === 39
-      const isLeft = key === 'ArrowDown' || keyCode === 37
+      const isRight = key === 'ArrowRight' || keyCode === 39
+      const isLeft = key === 'ArrowLeft' || keyCode === 37
       if (!isRight && !isLeft) return
 
       if (isRight) this.handleNextPage()
