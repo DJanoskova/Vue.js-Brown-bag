@@ -4,7 +4,11 @@
       {{ this.$route.meta.title }}
     </h1>
     <div class="p-3">
-      <router-view />
+      <transition name="slide-x" mode="out-in">
+        <keep-alive>
+          <router-view />
+        </keep-alive>
+      </transition>
     </div>
   </div>
 </template>

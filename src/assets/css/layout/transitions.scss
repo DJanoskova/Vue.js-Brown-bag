@@ -1,0 +1,19 @@
+.slide-x {
+  &-enter-active,
+  &-leave-active {
+    transition: 0.5s;
+  }
+
+  &-enter {
+    transform: translateX(50%);
+  }
+
+  &-leave-to {
+    transform: translateX(-50%);
+  }
+
+  &-enter,
+  &-leave-to {
+    opacity: 0
+  }
+}

@@ -2,4 +2,6 @@
 @import "theme/bootstrap";
 @import "theme/codemirror";
 
-@import "layout";
+@import "layout/transitions";
+@import "layout/layout";
+@import "layout/form";

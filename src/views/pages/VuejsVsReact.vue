@@ -30,7 +30,15 @@ export default {
         {
           title: 'Vue',
           list: [
-            'Programmer friendly API', 'Documentation', 'Vuex', 'Form handling and v-model', 'Named routes', 'Stuff gets done faster', 'React\'s and Angular\'s love child 👨‍❤️‍👨', 'The future'
+            'Programmer friendly API',
+            'Documentation',
+            'Vuex',
+            'Form handling and v-model',
+            'Emitting events',
+            'Named routes',
+            'Stuff gets done faster',
+            'React\'s and Angular\'s love child 👨‍❤️‍👨',
+            'The future'
           ]
         },
         {

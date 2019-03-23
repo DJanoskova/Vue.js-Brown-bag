@@ -1,5 +1,6 @@
 import VuejsVsReact from './VuejsVsReact'
 import NamedRoutes from './NamedRoutes'
+import VueFormsBasics from './VueFormsBasics'
 
 const pages = [
   {
@@ -21,7 +22,7 @@ const pages = [
     meta: {
       title: 'Vue forms basics'
     },
-    component: null
+    component: VueFormsBasics
   }
 ]
 
