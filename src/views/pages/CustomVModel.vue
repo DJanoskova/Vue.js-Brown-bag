@@ -4,24 +4,13 @@
     <div class="row mb-3">
       <div class="col-12 col-md-6">
         <div class="card">
-          <ButtonPicker v-model="flower" :data="flowers" />
-        </div>
-      </div>
-      <div class="col-12 col-md-6">
-        <div class="card">
+          <ButtonPicker v-model="flower" :data="flowers" class="mb-2" />
           <pre>{{ flower }}</pre>
         </div>
       </div>
-    </div>
-
-    <div class="row mb-2">
       <div class="col-12 col-md-6">
         <div class="card">
-          <ButtonPicker v-model="color" :data="colors" />
-        </div>
-      </div>
-      <div class="col-12 col-md-6">
-        <div class="card">
+          <ButtonPicker v-model="color" :data="colors" class="mb-2" />
           <pre>{{ color }}</pre>
         </div>
       </div>

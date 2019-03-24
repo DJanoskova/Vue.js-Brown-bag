@@ -17,13 +17,13 @@
     </div>
 
     <div class="row" v-if="way === 'vue'">
-      <div class="col-12 col-lg-7">
+      <div class="col-12 col-md-7">
         <Codemirror v-model="formHtml" lang="html" class="mb-2" />
         <Codemirror v-model="formJs" />
       </div>
-      <div class="col-12 col-lg-5">
+      <div class="col-12 col-md-5">
 
-        <div class="card mb-3">
+        <div class="card mb-3 p-4">
           <form>
             <input type="text" v-model="person.name" placeholder="Name" class="form-control mb-2">
             <input type="text" v-model="person.surname" placeholder="Surname" class="form-control mb-2">

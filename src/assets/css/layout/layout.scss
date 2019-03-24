@@ -1,5 +1,15 @@
 html {
-  font-size: 25px;
+  &.text-enlarge {
+    font-size: 22px;
+
+    .vue-codemirror {
+      font-size: 90%;
+    }
+  }
+}
+
+#app {
+  padding-bottom: 2rem;
 }
 
 .site-title {
@@ -17,7 +27,7 @@ html {
 
 pre {
   padding: 0 0.5rem;
-  font-size: 0.8rem;
+  //font-size: 0.8rem;
   border-radius: 1rem;
 }
 
@@ -25,9 +35,16 @@ pre {
   padding: 0.5rem;
   background: #304148;
   border-radius: 0.5rem;
-  font-size: 0.8rem;
+  //font-size: 0.8rem;
+  font-size: 110%;
 }
 
 .text-muted {
   color: rgb(190, 190, 190) !important
+}
+
+.app-views {
+  position: absolute;
+  top: 5px;
+  right: 20px;
 }

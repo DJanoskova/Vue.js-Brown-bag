@@ -2,6 +2,7 @@
   <div>
     <h1 class="text-center site-title">
       {{ this.$route.meta.title }}
+      <SwitchViews />
     </h1>
     <div class="p-3">
       <transition name="slide-x" mode="out-in">
@@ -10,11 +11,15 @@
         </keep-alive>
       </transition>
     </div>
+    <Pagination :activePage="activePage" />
   </div>
 </template>
 
 <script>
-import pages from '../views/pages';
+import pages from '../views/pages'
+
+import SwitchViews from '../components/SwitchViews'
+import Pagination from '../components/Pagination'
 
 export default {
   metaInfo () {
@@ -51,6 +56,10 @@ export default {
     activePage () {
       return parseInt(this.$route.path.replace(/\D+/g, ''))
     }
+  },
+  components: {
+    SwitchViews,
+    Pagination
   },
   mounted () {
     window.addEventListener('keydown', this.handleKeydown)

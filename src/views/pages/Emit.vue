@@ -9,11 +9,11 @@
     </div>
 
     <div class="row">
-      <div class="col-12 col-lg-6">
+      <div class="col-12 col-md-6">
         <span class="small text-muted">ParentComponent.vue</span>
         <Codemirror v-model="parentComponent" />
       </div>
-      <div class="col-12 col-lg-6">
+      <div class="col-12 col-md-6">
         <span class="small text-muted">ChildComponent.vue</span>
         <Codemirror v-model="childComponent" lang="html" />
       </div>
