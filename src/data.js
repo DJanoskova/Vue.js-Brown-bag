@@ -91,9 +91,9 @@ export const basicFormReact2 = `const awesomeForm = () => {
   return (
     <form>
       <input type="text" :value={person.name} onChange={e => handlePersonChange(e, 'name')} />
-      <input type="text" :value={person.surname} onChange={e => handlePersonChange(e, 'surname'} />
-      <input type="number" :value={person.age} onChange={e => handlePersonChange(e, 'age'} />
-      <select :value={person.framework} onChange={e => handlePersonChange(e, 'framework'}>
+      <input type="text" :value={person.surname} onChange={e => handlePersonChange(e, 'surname')} />
+      <input type="number" :value={person.age} onChange={e => handlePersonChange(e, 'age')} />
+      <select :value={person.framework} onChange={e => handlePersonChange(e, 'framework')}>
         <option value="vue">Vue</option>
         <option value="react">React</option>
         <option value="angular">Angular</option>
