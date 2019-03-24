@@ -3,6 +3,7 @@ import NamedRoutes from './NamedRoutes'
 import VueFormsBasics from './VueFormsBasics'
 import Emit from './Emit'
 import CustomVModel from './CustomVModel'
+import Links from './Links'
 
 const pages = [
   {
@@ -39,6 +40,13 @@ const pages = [
       title: 'Custom v-model'
     },
     component: CustomVModel
+  },
+  {
+    name: 'links',
+    meta: {
+      title: 'Useful links'
+    },
+    component: Links
   }
 ]
 
