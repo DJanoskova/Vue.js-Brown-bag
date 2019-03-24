@@ -8,6 +8,7 @@ import store from './store'
 import './assets/css/main.scss'
 
 Vue.config.productionTip = false
+Vue.config.devtools = true
 
 Vue.use(Meta)
 
