@@ -1,5 +1,6 @@
 import VuejsVsReact from './VuejsVsReact'
 import Introduction from './Introduction'
+import Components from './Components'
 import NamedRoutes from './NamedRoutes'
 import VueFormsBasics from './VueFormsBasics'
 import Emit from './Emit'
@@ -20,6 +21,13 @@ const pages = [
       title: 'Introduction to Vue.js'
     },
     component: Introduction
+  },
+  {
+    name: 'custom-components',
+    meta: {
+      title: 'Custom components'
+    },
+    component: Components
   },
   {
     name: 'named-routes',

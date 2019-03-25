@@ -23,6 +23,10 @@ html {
   padding: 1rem;
   box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.1);
   border-radius: 1rem;
+
+  + .card {
+    margin-top: 2rem;
+  }
 }
 
 pre {
