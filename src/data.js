@@ -211,3 +211,35 @@ export default {
   }
 }
 </script>`
+
+export const introductionSourceHtml = `<template>
+  <div>
+    <div class="text-center">
+      <button type="button" @click="handleIncrement">
+        Increment
+      </button>
+      <button type="button" @click="handleDecrement">
+        Decrement
+      </button>
+    </div>
+    {{ count }}
+  </div>
+</template>`
+
+export const introductionSourceJs = `<script>
+export default {
+  data() {
+    return {
+      count: 1
+    }
+  },
+  methods: {
+    handleIncrement() {
+      this.count++
+    },
+    handleDecrement() {
+      this.count--
+    }
+  }
+}
+</script>`

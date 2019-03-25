@@ -1,4 +1,5 @@
 import VuejsVsReact from './VuejsVsReact'
+import Introduction from './Introduction'
 import NamedRoutes from './NamedRoutes'
 import VueFormsBasics from './VueFormsBasics'
 import Emit from './Emit'
@@ -14,7 +15,14 @@ const pages = [
     component: VuejsVsReact
   },
   {
-    name: 'names-routes',
+    name: 'introduction',
+    meta: {
+      title: 'Introduction to Vue.js'
+    },
+    component: Introduction
+  },
+  {
+    name: 'named-routes',
     meta: {
       title: 'Named routes'
     },
