@@ -1,85 +1,58 @@
 <template>
-  <div class="container">
+  <div class="container-fluid">
+    <div class="container mb-3">
+      <div class="row mb-3">
+        <div class="col-12 col-lg-6">
+          <UserForm />
+        </div>
+        <div class="col-12 col-lg-6">
+          <UserTable />
+        </div>
+      </div>
+      <hr>
+    </div>
+
+    <div class="container mb-3">
+      <span class="text-muted">store.js</span>
+      <Codemirror v-model="storeSource" />
+    </div>
+
     <div class="row">
       <div class="col-12 col-lg-6">
-        <table class="table table-hover table-sm" style="width: 100%">
-          <thead>
-          <tr>
-            <th colspan="2" class="pl-2">
-              User
-            </th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr v-for="user in users" :key="user.id">
-            <td class="pl-2">
-              {{ user.name }}
-            </td>
-            <td class="text-right">
-              <button type="button" class="btn btn-outline-danger btn-sm" @click="handleDelete(user.id)">
-                Kill
-              </button>
-            </td>
-          </tr>
-          </tbody>
-        </table>
+        <span class="text-muted">UserForm.vue</span>
+        <Codemirror v-model="userFormSourceHtml" class="mb-2" lang="html" />
+        <Codemirror v-model="userFormSourceJs" />
       </div>
       <div class="col-12 col-lg-6">
-        <form @submit.prevent="handleSubmit">
-          <input class="form-control mb-2" placeholder="Name" v-model="model.name">
-          <input class="form-control mb-2" placeholder="Password" type="password" v-model="model.password">
-          <button type="submit" class="btn btn-primary">
-            Save
-          </button>
-        </form>
+        <span class="text-muted">UserTable.vue</span>
+        <Codemirror v-model="userTableSourceHtml" class="mb-2" lang="html" />
+        <Codemirror v-model="userTableSourceJs" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-/* eslint-disable no-console */
-import { mapActions, mapGetters } from 'vuex'
+import { storeSource, userFormSourceHtml, userFormSourceJs, userTableSourceHtml, userTableSourceJs } from '../../data';
+
+import Codemirror from '../../components/Codemirror';
+import UserForm from '../../components/UserForm';
+import UserTable from '../../components/UserTable';
 
 export default {
   data() {
     return {
-      model: {
-        name: '',
-        password: ''
-      }
+      storeSource,
+      userFormSourceHtml,
+      userFormSourceJs,
+      userTableSourceHtml,
+      userTableSourceJs
     }
   },
-  methods: {
-    ...mapActions([
-      'USERS_GET',
-      'USER_CREATE',
-      'USER_DELETE'
-    ]),
-    async handleSubmit() {
-      try {
-        const response = await this.USER_CREATE(this.model)
-        console.log('New user has been created!', response)
-        this.resetModel()
-      } catch (e) {
-        console.log('Error', e)
-      }
-    },
-    handleDelete(userId) {
-      this.USER_DELETE(userId)
-    },
-    resetModel() {
-      this.model.name = ''
-      this.model.password = ''
-    }
-  },
-  computed: {
-    ...mapGetters([
-      'users'
-    ])
-  },
-  mounted() {
-    this.USERS_GET()
+  components: {
+    Codemirror,
+    UserForm,
+    UserTable
   }
 }
 </script>
