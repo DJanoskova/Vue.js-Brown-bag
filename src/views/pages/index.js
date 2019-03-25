@@ -6,6 +6,7 @@ import NamedRoutes from './NamedRoutes'
 import VueFormsBasics from './VueFormsBasics'
 import Emit from './Emit'
 import CustomVModel from './CustomVModel'
+import Store from './Store'
 import Links from './Links'
 
 const pages = [
@@ -64,6 +65,13 @@ const pages = [
       title: 'Custom v-model'
     },
     component: CustomVModel
+  },
+  {
+    name: 'using-store',
+    meta: {
+      title: 'Using store (vuex)'
+    },
+    component: Store
   },
   {
     name: 'links',
