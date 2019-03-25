@@ -1,5 +1,6 @@
 import VuejsVsReact from './VuejsVsReact'
 import Introduction from './Introduction'
+import Lifecycle from './Lifecycle'
 import Components from './Components'
 import NamedRoutes from './NamedRoutes'
 import VueFormsBasics from './VueFormsBasics'
@@ -21,6 +22,13 @@ const pages = [
       title: 'Introduction to Vue.js'
     },
     component: Introduction
+  },
+  {
+    name: 'lifecycle',
+    meta: {
+      title: 'Vue.js lifecycle hooks'
+    },
+    component: Lifecycle
   },
   {
     name: 'custom-components',
