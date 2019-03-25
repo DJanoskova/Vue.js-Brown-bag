@@ -21,8 +21,8 @@ export default new Vuex.Store({
     USER_ADD(state, user) {
       state.users.push(user)
     },
-    USER_REMOVE(state, user) {
-      const index = findIndex(state.users, { id: user.id })
+    USER_REMOVE(state, userId) {
+      const index = findIndex(state.users, { id: userId })
       state.users.splice(index, 1)
     }
   },
@@ -47,6 +47,14 @@ export default new Vuex.Store({
         }
         context.commit('USER_ADD', newUser)
         return newUser
+      } catch(e) {
+        throw e
+      }
+    },
+    async USER_DELETE (context, userId) {
+      try {
+        await axios.delete(`/users/${userId}.json`)
+        context.commit('USER_REMOVE', userId)
       } catch(e) {
         throw e
       }

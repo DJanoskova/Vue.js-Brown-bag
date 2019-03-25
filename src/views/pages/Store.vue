@@ -1,9 +1,28 @@
 <template>
-  <div class="container-fluid">
+  <div class="container">
     <div class="row">
       <div class="col-12 col-lg-6">
-        Users:
-        <pre>{{ users }}</pre>
+        <table class="table table-hover table-sm" style="width: 100%">
+          <thead>
+          <tr>
+            <th colspan="2" class="pl-2">
+              User
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr v-for="user in users" :key="user.id">
+            <td class="pl-2">
+              {{ user.name }}
+            </td>
+            <td class="text-right">
+              <button type="button" class="btn btn-outline-danger btn-sm" @click="handleDelete(user.id)">
+                Kill
+              </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
       </div>
       <div class="col-12 col-lg-6">
         <form @submit.prevent="handleSubmit">
@@ -34,7 +53,8 @@ export default {
   methods: {
     ...mapActions([
       'USERS_GET',
-      'USER_CREATE'
+      'USER_CREATE',
+      'USER_DELETE'
     ]),
     async handleSubmit() {
       try {
@@ -44,6 +64,9 @@ export default {
       } catch (e) {
         console.log('Error', e)
       }
+    },
+    handleDelete(userId) {
+      this.USER_DELETE(userId)
     },
     resetModel() {
       this.model.name = ''
