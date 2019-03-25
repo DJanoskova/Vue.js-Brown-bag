@@ -19,6 +19,12 @@
       </a>
     </p>
     <p>
+      Vue API CheatSheet:<br>
+      <a href="https://vuejs-tips.github.io/cheatsheet/" target="_blank">
+        https://vuejs-tips.github.io/cheatsheet/
+      </a>
+    </p>
+    <p>
       Vue CLI:<br>
       <a href="https://cli.vuejs.org/" target="_blank">
         https://cli.vuejs.org/

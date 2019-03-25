@@ -42,9 +42,7 @@
           </form>
         </div>
 
-        <div class="card">
-          <pre>{{ person }}</pre>
-        </div>
+        <pre>{{ person }}</pre>
       </div>
     </div>
     <template v-else>
@@ -62,7 +60,7 @@ import { basicFormHtml, basicFormJs, basicFormReact1, basicFormReact2 } from '..
 import { Person } from '../../models';
 
 export default {
-  data () {
+  data() {
     return {
       formHtml: basicFormHtml,
       formJs: basicFormJs,

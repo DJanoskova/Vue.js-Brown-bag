@@ -14,7 +14,7 @@
             Decrement
           </button>
         </div>
-        {{ count }}
+        Count: {{ count }}
       </div>
     </div>
   </div>
