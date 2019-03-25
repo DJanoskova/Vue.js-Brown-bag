@@ -10,6 +10,11 @@ html {
   }
 }
 
+a.active {
+  color: #333333;
+  cursor: default;
+}
+
 #app {
   padding-bottom: 2rem;
 }
@@ -47,10 +52,14 @@ pre {
   color: rgb(190, 190, 190) !important
 }
 
-.app-views {
+.header-menu {
   position: absolute;
   top: 5px;
   right: 20px;
+
+  > div {
+    display: inline-block;
+  }
 }
 
 pre {
@@ -60,4 +69,26 @@ pre {
 
 img {
   max-width: 100%;
+}
+
+.app-aside {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: 100%;
+  background: #ffffff;
+  box-shadow: -0.5rem 0 2rem rgba(0, 0, 0, 0.05);
+  z-index: 20;
+  padding: 0.5rem;
+  transition: 0.3s;
+  transform: translateX(calc(100% + 0.5rem));
+
+  &__content {
+    padding: 1.5rem;
+  }
+
+  &.show {
+    transform: translateX(0);
+  }
 }

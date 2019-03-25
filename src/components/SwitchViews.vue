@@ -1,5 +1,5 @@
 <template>
-  <div class="float-right app-views">
+  <div>
     <button class="btn btn-primary mr-1"
       v-for="view in views"
       @click="currentView = view.value"

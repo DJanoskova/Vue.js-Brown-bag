@@ -1,9 +1,14 @@
 <template>
   <div>
-    <h1 class="text-center site-title">
-      {{ this.$route.meta.title }}
-      <SwitchViews />
-    </h1>
+    <div>
+      <h1 class="text-center site-title">
+        {{ this.$route.meta.title }}
+      </h1>
+      <div class="header-menu">
+        <SwitchViews />
+        <ShowAside />
+      </div>
+    </div>
     <div class="p-3">
       <transition name="slide-x" mode="out-in">
         <router-view />
@@ -17,6 +22,7 @@
 import pages from '../views/pages'
 
 import SwitchViews from '../components/SwitchViews'
+import ShowAside from '../components/ShowAside'
 import Pagination from '../components/Pagination'
 
 export default {
@@ -57,7 +63,8 @@ export default {
   },
   components: {
     SwitchViews,
-    Pagination
+    Pagination,
+    ShowAside
   },
   mounted() {
     window.addEventListener('keydown', this.handleKeydown)
