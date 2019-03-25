@@ -1,6 +1,8 @@
 html {
+  font-size: 18px;
+
   &.text-enlarge {
-    font-size: 22px;
+    font-size: 25px;
 
     .vue-codemirror {
       font-size: 90%;
