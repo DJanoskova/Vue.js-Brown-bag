@@ -1,9 +1,9 @@
 <template>
   <p>
-    <button type="button" @click="$emit('onSuccess')">
+    <button type="button" class="btn btn-primary mr-2" @click="$emit('onSuccess')">
       Success
     </button>
-    <button type="button" @click="alertFail">
+    <button type="button" class="btn btn-danger" @click="alertFail">
       Fail
     </button>
   </p>

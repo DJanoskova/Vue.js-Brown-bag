@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-12 col-lg-8">
+      <div class="col-12 col-lg-8 mb-3">
         <Codemirror v-model="sourceHtml" lang="html" class="mb-2" />
         <Codemirror v-model="sourceJs" />
       </div>

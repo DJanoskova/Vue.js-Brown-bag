@@ -8,6 +8,11 @@
       </p>
     </div>
 
+    <div class="text-center mb-3">
+      <ButtonsEmit @onFail="handleFail"
+        @onSuccess="handleSuccess" />
+    </div>
+
     <div class="row">
       <div class="col-12 col-md-6 mb-3">
         <span class="small text-muted">ChildComponent.vue</span>
@@ -22,17 +27,31 @@
 </template>
 
 <script>
+/* eslint-disable no-console */
+
 import Codemirror from '../../components/Codemirror'
+import ButtonsEmit from '../../components/ButtonsEmit'
 
 import { parentEmit, childEmit } from '../../data'
 
 export default {
-  components: { Codemirror },
-  data () {
+  data() {
     return {
       parentComponent: parentEmit,
       childComponent: childEmit
     }
+  },
+  methods: {
+    handleSuccess () {
+      console.log('Yay!')
+    },
+    handleFail (message) {
+      console.log('Me no happy!', message)
+    }
+  },
+  components: {
+    Codemirror,
+    ButtonsEmit
   }
 }
 </script>

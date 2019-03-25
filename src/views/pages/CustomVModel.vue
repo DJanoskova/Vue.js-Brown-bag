@@ -3,7 +3,7 @@
 
     <div class="row mb-3">
       <div class="col-12 col-md-6">
-        <div class="card">
+        <div class="card mb-3">
           <ButtonPicker v-model="flower" :data="flowers" class="mb-2" />
           <pre>{{ flower }}</pre>
         </div>

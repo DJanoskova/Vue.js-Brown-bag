@@ -31,7 +31,6 @@ html {
 
 pre {
   padding: 0 0.5rem;
-  //font-size: 0.8rem;
   border-radius: 1rem;
 }
 
@@ -39,7 +38,6 @@ pre {
   padding: 0.5rem;
   background: #304148;
   border-radius: 0.5rem;
-  //font-size: 0.8rem;
   font-size: 110%;
 }
 
@@ -56,4 +54,8 @@ pre {
 pre {
   background: #f3f3f3;
   padding: 1rem;
+}
+
+img {
+  max-width: 100%;
 }

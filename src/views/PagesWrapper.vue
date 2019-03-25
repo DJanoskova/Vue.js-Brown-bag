@@ -6,9 +6,7 @@
     </h1>
     <div class="p-3">
       <transition name="slide-x" mode="out-in">
-        <keep-alive>
-          <router-view />
-        </keep-alive>
+        <router-view />
       </transition>
     </div>
     <Pagination :activePage="activePage" />
@@ -22,13 +20,13 @@ import SwitchViews from '../components/SwitchViews'
 import Pagination from '../components/Pagination'
 
 export default {
-  metaInfo () {
+  metaInfo() {
     return {
       title: this.$route.meta.title
     }
   },
   methods: {
-    handleKeydown (event) {
+    handleKeydown(event) {
       const { key, keyCode } = event
       const isRight = key === 'ArrowRight' || keyCode === 39
       const isLeft = key === 'ArrowLeft' || keyCode === 37
@@ -37,14 +35,14 @@ export default {
       if (isRight) this.handleNextPage()
       else this.handlePrevPage()
     },
-    handleNextPage () {
+    handleNextPage() {
       const max = pages.length
       if (this.activePage < max) {
         const nextPage = pages[this.activePage]
         this.$router.push({ name: nextPage.name })
       }
     },
-    handlePrevPage () {
+    handlePrevPage() {
       const min = 1
       if (this.activePage > min) {
         const prevPage = pages[this.activePage - 2]
@@ -53,7 +51,7 @@ export default {
     }
   },
   computed: {
-    activePage () {
+    activePage() {
       return parseInt(this.$route.path.replace(/\D+/g, ''))
     }
   },
@@ -61,10 +59,10 @@ export default {
     SwitchViews,
     Pagination
   },
-  mounted () {
+  mounted() {
     window.addEventListener('keydown', this.handleKeydown)
   },
-  beforeDestroy () {
+  beforeDestroy() {
     window.removeEventListener('keydown', this.handleKeydown)
   }
 }

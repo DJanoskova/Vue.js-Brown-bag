@@ -114,6 +114,8 @@ export const parentEmit = `<template>
 </template>
 
 <script>
+import ChildComponent from './ChildComponent'
+
 export default {
   methods: {
     handleSuccess () {
@@ -122,6 +124,9 @@ export default {
     handleFail (message) {
       console.log('Me no happy!', message)
     }
+  },
+  components: {
+    ChildComponent
   }
 }
 </script>`
