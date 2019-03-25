@@ -5,6 +5,7 @@ import Components from './CustomComponents'
 import NamedRoutes from './NamedRoutes'
 import VueFormsBasics from './VueFormsBasics'
 import Emit from './Emit'
+import Watch from './Watch'
 import CustomVModel from './CustomVModel'
 import Store from './Store'
 import Links from './Links'
@@ -58,6 +59,13 @@ const pages = [
       title: '$emit'
     },
     component: Emit
+  },
+  {
+    name: 'watch',
+    meta: {
+      title: 'Watch'
+    },
+    component: Watch
   },
   {
     name: 'custom-v-model',

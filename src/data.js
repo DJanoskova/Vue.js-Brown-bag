@@ -219,10 +219,12 @@ export default {
 export const introductionSourceHtml = `<template>
   <div>
     <div class="text-center">
-      <button type="button" @click="handleIncrement">
+      <button type="button"
+        @click="handleIncrement">
         Increment
       </button>
-      <button type="button" @click="handleDecrement">
+      <button type="button"
+        @click="handleDecrement">
         Decrement
       </button>
     </div>
