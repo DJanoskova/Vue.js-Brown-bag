@@ -10,7 +10,7 @@
         </div>
         <div class="card">
           <pre>{{ clock2 }}</pre>
-          <Clock format="dddd, DD.MM. HH:mm" />
+          <Clock format="dddd, DD. MMMM" />
         </div>
         <div class="card">
           <pre>{{ clock3 }}</pre>
@@ -36,7 +36,7 @@ export default {
     return {
       source: customComponentSource,
       clock1: '<Clock />',
-      clock2: '<Clock format="dddd, DD.MM. HH:mm" />',
+      clock2: '<Clock format="dddd, DD. MMMM" />',
       clock3: '<Clock format="DD.MM.YYYY, HH:mm" />',
       script: `<script>
 import Clock from './components/Clock'

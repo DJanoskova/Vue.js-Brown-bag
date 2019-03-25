@@ -11,6 +11,9 @@
     <div class="text-center mb-3">
       <ButtonsEmit @onFail="handleFail"
         @onSuccess="handleSuccess" />
+      <p>
+        Successes: {{ successCount }}, Fails: {{ failCount }}
+      </p>
     </div>
 
     <div class="row">
@@ -38,15 +41,19 @@ export default {
   data() {
     return {
       parentComponent: parentEmit,
-      childComponent: childEmit
+      childComponent: childEmit,
+      successCount: 0,
+      failCount: 0
     }
   },
   methods: {
     handleSuccess () {
       console.log('Yay!')
+      this.successCount++
     },
     handleFail (message) {
       console.log('Me no happy!', message)
+      this.failCount++
     }
   },
   components: {
