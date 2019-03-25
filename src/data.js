@@ -108,14 +108,19 @@ export const basicFormReact2 = `const awesomeForm = () => {
 `
 
 export const parentEmit = `<template>
-  <ChildComponent @onHourPassed="handleHourPassed">
+  <ChildComponent
+    @onSuccess="handleSuccess"
+    @onFail="handleFail" />
 </template>
 
 <script>
 export default {
   methods: {
-    handleHourPassed (minutes) {
-      this.saveThisImportantInformation(minutes)
+    handleSuccess () {
+      console.log('Yay!')
+    },
+    handleFail (message) {
+      console.log('Me no happy!', message)
     }
   }
 }
@@ -123,25 +128,21 @@ export default {
 
 export const childEmit = `<template>
   <p>
-    You've been watching for {{ minutes }} minutes.
-    Get up, do something!
+    <button type="button" @click="$emit('onSuccess')">
+      Success
+    </button>
+    <button type="button" @click="alertFail">
+      Fail
+    </button>
   </p>
 </template>
 
 <script>
 export default {
-  data () {
-    return {
-      minutes: 0
+  methods: {
+    alertFail () {
+      this.$emit('onFail', 'This is your failure payload')
     }
-  },
-  created () {
-    setInterval(() => {
-      this.minutes++
-      if (this.minutes % 60 === 0) {
-        this.$emit('handleHourPassed', this.minutes)
-      }
-    }, 60000);
   }
 }
 </script>`
@@ -159,8 +160,6 @@ export const buttonPickerSource = `<template>
 </template>
 
 <script>
-import ButtonPicker from './ButtonPicker'
-
 export default {
   props: {
     value: {
