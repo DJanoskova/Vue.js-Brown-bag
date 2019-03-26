@@ -1,6 +1,7 @@
 import VuejsVsReact from './VuejsVsReact'
 import Introduction from './Introduction'
 import Lifecycle from './Lifecycle'
+import Computed from './Computed'
 import Components from './CustomComponents'
 import NamedRoutes from './NamedRoutes'
 import VueFormsBasics from './VueFormsBasics'
@@ -31,6 +32,13 @@ const pages = [
       title: 'Vue.js lifecycle hooks'
     },
     component: Lifecycle
+  },
+  {
+    name: 'computed',
+    meta: {
+      title: 'Computed properties'
+    },
+    component: Computed
   },
   {
     name: 'custom-components',

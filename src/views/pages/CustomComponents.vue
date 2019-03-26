@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import { customComponentSource } from '../../data'
+import { customComponentSource, clockScript } from '../../data'
 
 import Codemirror from '../../components/Codemirror'
 
@@ -38,15 +38,7 @@ export default {
       clock1: '<Clock />',
       clock2: '<Clock format="dddd, DD. MMMM" />',
       clock3: '<Clock format="DD.MM.YYYY, HH:mm" />',
-      script: `<script>
-import Clock from './components/Clock'
-
-export default {
-  components: {
-    Clock
-  }
-}
-<\/script>`
+      script:clockScript
     }
   },
   components: {

@@ -451,3 +451,13 @@ export default {
   }
 }
 </script>`
+
+export const clockScript =  `<script>
+import Clock from './components/Clock'
+
+export default {
+  components: {
+    Clock
+  }
+}
+</script>`
