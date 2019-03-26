@@ -32,6 +32,7 @@
 
 <script>
 /* eslint-disable no-console */
+import { reactComputed } from '../../data'
 
 export default {
   data() {
@@ -40,7 +41,8 @@ export default {
         name: 'Jane',
         middleName: '',
         surname: 'Doe'
-      }
+      },
+      reactComputed
     }
   },
   computed: {

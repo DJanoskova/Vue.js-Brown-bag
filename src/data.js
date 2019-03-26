@@ -461,3 +461,65 @@ export default {
   }
 }
 </script>`
+
+export const reactComputed = `class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+    	model: {
+        name: 'Jane',
+        middleName: '',
+        surname: 'Doe'
+      }
+    }
+  }
+  
+  handleChange = (e, property) => {
+    e.persist();
+    this.setState((prevState) => ({
+      model: {
+        ...prevState.model,
+        [property]: e.target.value
+      }
+    }));
+  }
+  
+  handleNameChange = (e) => {
+    this.handleChange(e, 'name');
+  }
+  
+  handleMiddleNameChange = (e) => {
+    this.handleChange(e, 'middleName');
+  }
+  
+  handleSurnameChange = (e) => {
+    this.handleChange(e, 'surname');
+  }
+  
+  getFirstAndLastName = () => {
+    console.log('Get first and last name')
+    const { model } = this.state;
+    return model.name + ' ' + model.surname;
+  }
+  
+  render() {
+    const { model } = this.state;
+
+    return (
+    <div>
+      <form>
+        <input type="text"
+          value={model.name} onChange={this.handleNameChange} placeholder="Name"></input>
+          <input type="text"
+          value={model.middleName} onChange={this.handleMiddleNameChange} placeholder="Middle name"></input>
+          <input type="text"
+          value={model.surname} onChange={this.handleSurnameChange} placeholder="Surname"></input>
+      </form>
+      First and last Name:<br></br>
+      {this.getFirstAndLastName()}
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<App />, document.querySelector("#app"))`
