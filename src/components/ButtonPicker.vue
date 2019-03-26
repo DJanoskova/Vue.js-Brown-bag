@@ -2,7 +2,7 @@
   <div>
     <button v-for="instance in data"
       type="button"
-      :key="instance.label"
+      :key="instance.title"
       @click="model = instance.value"
       class="btn btn-danger mr-2"
       :class="{active: model === instance.value}">

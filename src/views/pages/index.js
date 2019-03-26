@@ -41,6 +41,13 @@ const pages = [
     component: Computed
   },
   {
+    name: 'watch',
+    meta: {
+      title: 'Watch'
+    },
+    component: Watch
+  },
+  {
     name: 'custom-components',
     meta: {
       title: 'Custom components'
@@ -67,13 +74,6 @@ const pages = [
       title: '$emit'
     },
     component: Emit
-  },
-  {
-    name: 'watch',
-    meta: {
-      title: 'Watch'
-    },
-    component: Watch
   },
   {
     name: 'custom-v-model',

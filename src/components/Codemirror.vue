@@ -30,7 +30,7 @@ export default {
       type: Number
     }
   },
-  data () {
+  data() {
     return {
       model: this.value || '',
       options: {
@@ -45,19 +45,27 @@ export default {
       }
     }
   },
+  methods: {
+    resetLang() {
+      this.options.mode = `text/${this.lang}`
+    }
+  },
   computed: {
-    customStyle () {
+    customStyle() {
       const style = {}
       if (this.height) style.height = this.height + 'px'
       return style
     }
   },
   watch: {
-    value () {
+    value() {
       this.model = this.value || ''
     },
-    model () {
+    model() {
       this.$emit('input', this.model)
+    },
+    lang() {
+      this.resetLang()
     }
   },
   components: {

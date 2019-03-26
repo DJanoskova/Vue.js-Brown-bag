@@ -156,7 +156,7 @@ export const buttonPickerSource = `<template>
   <div>
     <button v-for="instance in data"
       type="button"
-      :key="instance.label"
+      :key="instance.title"
       @click="model = instance.value"
       :class="{active: model === instance.value}">
       {{ instance.title }}
@@ -452,7 +452,7 @@ export default {
 }
 </script>`
 
-export const clockScript =  `<script>
+export const clockScript = `<script>
 import Clock from './components/Clock'
 
 export default {
@@ -462,7 +462,7 @@ export default {
 }
 </script>`
 
-export const reactComputed = `class App extends React.Component {
+export const reactComputed = `class MyForm extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -509,17 +509,51 @@ export const reactComputed = `class App extends React.Component {
     <div>
       <form>
         <input type="text"
-          value={model.name} onChange={this.handleNameChange} placeholder="Name"></input>
+            value={model.name}
+            onChange={this.handleNameChange} />
           <input type="text"
-          value={model.middleName} onChange={this.handleMiddleNameChange} placeholder="Middle name"></input>
+            value={model.middleName}
+            onChange={this.handleMiddleNameChange} />
           <input type="text"
-          value={model.surname} onChange={this.handleSurnameChange} placeholder="Surname"></input>
-      </form>
-      First and last Name:<br></br>
-      {this.getFirstAndLastName()}
+            value={model.surname}
+            onChange={this.handleSurnameChange />
+        </form>
+        First and last Name:<br></br>
+        {this.getFirstAndLastName()}
       </div>
     );
   }
 }
 
 ReactDOM.render(<App />, document.querySelector("#app"))`
+
+export const vueComputedHtml = `<template>
+  <form>
+    <input type="text"
+      v-model="model.name" />
+    <input type="text"
+      v-model="model.middleName" />
+    <input type="text"
+      v-model="model.surname" />
+  </form>
+</template>`
+
+export const vueComputedJs = `<script>
+export default {
+  data() {
+    return {
+      model: {
+        name: 'Jane',
+        middleName: '',
+        surname: 'Doe'
+      }
+    }
+  },
+  computed: {
+    fullName() {
+      console.log('[Computed] Full name proc')
+      return this.model.name + ' ' + this.model.surname
+    }
+  }
+}
+</script>`
