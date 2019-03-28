@@ -1,5 +1,6 @@
 import VuejsVsReact from './VuejsVsReact'
 import Introduction from './Introduction'
+import WhoUsesVue from './WhoUsesVue'
 import Lifecycle from './Lifecycle'
 import Computed from './Computed'
 import Components from './CustomComponents'
@@ -18,6 +19,13 @@ const pages = [
       title: 'Vue.js vs React'
     },
     component: VuejsVsReact
+  },
+  {
+    name: 'who-uses-vue',
+    meta: {
+      title: 'Who uses Vue?'
+    },
+    component: WhoUsesVue
   },
   {
     name: 'introduction',
