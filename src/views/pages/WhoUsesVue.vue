@@ -28,6 +28,10 @@ export default {
           url: 'https://gitlab.com/'
         },
         {
+          name: 'Facebook NewsFeed',
+          url: 'https://newsfeed.fb.com/?lang=en'
+        },
+        {
           name: 'laracasts.com',
           url: 'https://laracasts.com/'
         },
@@ -38,6 +42,15 @@ export default {
         {
           name: 'FontAwesome',
           url: 'https://fontawesome.com/'
+        },
+        {
+          name: 'Netflix internal apps'
+        },
+        {
+          name: 'Adobe Portfolio'
+        },
+        {
+          name: 'Xiaomi'
         }
       ]
     }
