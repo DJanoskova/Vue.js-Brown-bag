@@ -35,6 +35,13 @@ const pages = [
     component: Lifecycle
   },
   {
+    name: 'named-routes',
+    meta: {
+      title: 'Named routes'
+    },
+    component: NamedRoutes
+  },
+  {
     name: 'vue-forms-basics',
     meta: {
       title: 'Vue forms basics'
@@ -61,13 +68,6 @@ const pages = [
       title: 'Custom components'
     },
     component: Components
-  },
-  {
-    name: 'named-routes',
-    meta: {
-      title: 'Named routes'
-    },
-    component: NamedRoutes
   },
   {
     name: 'emit',
