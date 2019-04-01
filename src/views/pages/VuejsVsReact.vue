@@ -19,12 +19,18 @@
     <p class="text-center mt-4 text-muted">
       Totally unbiased! 🤷🏻
     </p>
+    <p class="text-center small">
+      PS:
+      <a href="https://pbs.twimg.com/media/DqqLAUIVsAI3LGz.jpg:large" target="_blank">
+        Click here for an ugly image
+      </a>
+    </p>
   </div>
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       frameworks: [
         {
