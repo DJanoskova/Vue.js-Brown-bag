@@ -21,13 +21,6 @@ const pages = [
     component: VuejsVsReact
   },
   {
-    name: 'who-uses-vue',
-    meta: {
-      title: 'Who uses Vue?'
-    },
-    component: WhoUsesVue
-  },
-  {
     name: 'introduction',
     meta: {
       title: 'Introduction to Vue.js'
@@ -40,6 +33,13 @@ const pages = [
       title: 'Vue.js lifecycle hooks'
     },
     component: Lifecycle
+  },
+  {
+    name: 'vue-forms-basics',
+    meta: {
+      title: 'Vue forms basics'
+    },
+    component: VueFormsBasics
   },
   {
     name: 'computed',
@@ -70,13 +70,6 @@ const pages = [
     component: NamedRoutes
   },
   {
-    name: 'vue-forms-basics',
-    meta: {
-      title: 'Vue forms basics'
-    },
-    component: VueFormsBasics
-  },
-  {
     name: 'emit',
     meta: {
       title: '$emit'
@@ -96,6 +89,13 @@ const pages = [
       title: 'Using store (vuex)'
     },
     component: Store
+  },
+  {
+    name: 'who-uses-vue',
+    meta: {
+      title: 'Who uses Vue?'
+    },
+    component: WhoUsesVue
   },
   {
     name: 'links',

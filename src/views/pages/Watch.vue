@@ -3,56 +3,102 @@
     <div class="row">
 
       <div class="col-12 col-lg-6">
-        <button class="btn btn-primary" @click="count++">
-          Increment
-        </button>
-        <br>
-        Count: {{ count }}
+        <div class="mb-2">
+          <router-link tag="button"
+            :to="{name: 'watch', query: {animal: 'snail'}}"
+            class="btn btn-primary mr-1">
+            Snail
+          </router-link>
+          <router-link tag="button"
+            :to="{name: 'watch', query: {animal: 'ladybug'}}"
+            class="btn btn-primary mr-1">
+            Ladybug
+          </router-link>
+          <router-link tag="button"
+            :to="{name: 'watch', query: {animal: 'wasp'}}"
+            class="btn btn-primary mr-1">
+            Wasp
+          </router-link>
+          <router-link tag="button"
+            :to="{name: 'watch', query: {animal: 'sloth'}}"
+            class="btn btn-primary">
+            Sloth
+          </router-link>
+        </div>
+
+        <ul>
+          <li v-for="(animal, index) in visited" :key="index">
+            {{ animal }}
+          </li>
+        </ul>
+
+        <pre>
+watch: {
+  '$route'() {
+    console.log(this.$route.query)
+    this.visited.push(this.$route.query.animal)
+  }
+}
+        </pre>
       </div>
 
       <div class="col-12 col-lg-6">
-        <form>
-          <input class="form-control mb-2"
-            type="text"
-            v-model="model.name"
-            placeholder="Name"/>
-          <input class="form-control mb-2"
-            type="text"
-            v-model="model.surname"
-            placeholder="Surname"/>
-        </form>
+        <ButtonPicker v-model="view" :data="views" />
+        <p>{{ view }}</p>
 
-        <pre>{{ model }}</pre>
+        <pre>watch: {
+  view () {
+    console.log('The view has been changed!', this.view)
+  }
+}</pre>
       </div>
     </div>
+
+    <h5>Watch in React</h5>
+    <Codemirror v-model="reactUseEffect" />
   </div>
 </template>
 
 <script>
 /* eslint-disable no-console */
+import { reactUseEffect } from '../../data'
+
+import ButtonPicker from '../../components/ButtonPicker'
+import Codemirror from '../../components/Codemirror'
 
 export default {
   data() {
     return {
-      model: {
-        name: '',
-        surname: ''
-      },
-      count: 0
+      visited: [],
+      view: 'first',
+      views: [
+        { value: 'first', title: 'First view' },
+        { value: 'second', title: 'Second view' },
+        { value: 'third', title: 'Third view' }
+      ],
+      reactUseEffect
     }
   },
   methods: {
-    handleSuccess () {
+    handleSuccess() {
       this.successCount++
     },
-    handleFail () {
+    handleFail() {
       this.failCount++
     }
   },
   watch: {
-    count () {
-      console.log('The count has been updated to', this.count)
+    '$route'() {
+      console.log(this.$route.query)
+      this.visited.push(this.$route.query.animal)
+    },
+    view() {
+      console.log('The view has been changed!', this.view)
     }
+  },
+  components: {
+    ButtonPicker,
+    Codemirror
   }
 }
 </script>

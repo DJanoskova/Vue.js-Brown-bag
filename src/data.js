@@ -557,3 +557,21 @@ export default {
   }
 }
 </script>`
+
+export const reactUseEffect = `import React, { useEffect, useState } from react;
+
+const [route, setRoute] = useState('');
+const [view, setView] = useState('');
+
+const myComponent = () => {
+  useEffect(() => {
+    console.log('The route has changed', route);
+  }, [route])
+  
+  useEffect(() => {
+    console.log('The view has changed', view);
+  }, [view])
+  
+  return <div>{view}<br />{route}</div>;
+}
+`
