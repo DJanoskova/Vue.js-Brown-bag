@@ -17,6 +17,7 @@
     "lodash": "^4.17.11",
     "moment": "^2.24.0",
     "react": "^16.8.5",
+    "vee-validate": "^2.2.0",
     "vue": "^2.6.6",
     "vue-codemirror": "^4.0.6",
     "vue-feather-icons": "^4.10.0",

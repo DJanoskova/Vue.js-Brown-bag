@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import Meta from 'vue-meta'
+import VeeValidate from 'vee-validate'
 
 import router from './router'
 import store from './store'
@@ -11,6 +12,7 @@ Vue.config.productionTip = false
 Vue.config.devtools = true
 
 Vue.use(Meta)
+Vue.use(VeeValidate)
 
 new Vue({
   router,
