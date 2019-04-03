@@ -1,4 +1,5 @@
 import VuejsVsReact from './VuejsVsReact'
+import IsVueHard from './IsVueHard'
 import Introduction from './Introduction'
 import WhoUsesVue from './WhoUsesVue'
 import Lifecycle from './Lifecycle'
@@ -9,6 +10,7 @@ import VueFormsBasics from './VueFormsBasics'
 import Emit from './Emit'
 import Watch from './Watch'
 import CustomVModel from './CustomVModel'
+import CustomValidatingInput from './CustomValidatingInput'
 import Store from './Store'
 import Links from './Links'
 
@@ -19,6 +21,13 @@ const pages = [
       title: 'Vue.js vs React'
     },
     component: VuejsVsReact
+  },
+  {
+    name: 'is-vue-hard',
+    meta: {
+      title: 'Can you learn Vue?'
+    },
+    component: IsVueHard
   },
   {
     name: 'introduction',
@@ -82,6 +91,13 @@ const pages = [
       title: 'Custom v-model'
     },
     component: CustomVModel
+  },
+  {
+    name: 'custom-validating-input',
+    meta: {
+      title: 'Custom validating input'
+    },
+    component: CustomValidatingInput
   },
   {
     name: 'using-store',
