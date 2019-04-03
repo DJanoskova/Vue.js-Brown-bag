@@ -1,12 +1,18 @@
 <template>
   <div class="mb-2">
-    <input :type="type"
+    <input v-model="model"
+      :type="type"
       :name="name"
       v-validate="validate"
-      data-vv-name="name"
+      :data-vv-name="name"
       data-vv-as=" "
       :placeholder="placeholder"
-      class="form-control">
+      class="form-control"
+      :class="customClasses">
+
+    <div v-if="displayedError" class="small text-danger">
+      {{ displayedError }}
+    </div>
   </div>
 </template>
 
@@ -40,7 +46,30 @@ export default {
       this.model = this.value
     },
     model () {
-      this.$emit('input', this.value)
+      this.$emit('input', this.model)
+    }
+  },
+  computed: {
+    displayedError () {
+      const errors = this.errors;
+      if (!errors || !errors.items || !errors.items.length) return null;
+      const hasError = errors.items.find(item => item.field === this.name);
+      if (hasError) return hasError.msg;
+      return null;
+    },
+    customClasses () {
+      const field = this.fields[this.name];
+      if (!field || !field.touched) return null;
+
+      const classes = [];
+      if (field.valid) classes.push('border-success');
+      else classes.push('border-danger');
+      return classes;
+    },
+    showError () {
+      const field = this.fields[this.name];
+      if (!field) return false;
+      return field.touched && !field.valid;
     }
   }
 }

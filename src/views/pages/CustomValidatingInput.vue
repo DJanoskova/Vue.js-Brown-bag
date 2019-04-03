@@ -2,11 +2,13 @@
   <div>
     <div class="row">
       <div class="col-12 col-lg-6">
-        <ValidatingInput v-model="user.name" validate="required" placeholder="Name" />
-        <ValidatingInput v-model="user.surname" validate="required" placeholder="Surname" />
-        <ValidatingInput v-model="user.age" validate="required|integer" placeholder="Age" />
-        <ValidatingInput v-model="user.email" validate="required|email" placeholder="E-mail" />
-        <ValidatingInput v-model="user.about" validate="max:11" placeholder="About" />
+
+        <ValidatingInput v-model="user.username" validate="required|min:4" placeholder="Username" name="username" />
+        <ValidatingInput v-model="user.age" validate="required|integer" placeholder="Age" name="age" />
+        <ValidatingInput v-model="user.email" validate="required|email" placeholder="E-mail" name="email" />
+        <ValidatingInput v-model="user.about" validate="max:50" placeholder="About" name="about" />
+
+        <pre>{{ user }}</pre>
       </div>
     </div>
   </div>
@@ -23,8 +25,7 @@ export default {
   data () {
     return {
       user: {
-        name: '',
-        surname: '',
+        username: '',
         age: null,
         email: '',
         about: ''
