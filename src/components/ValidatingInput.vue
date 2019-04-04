@@ -1,11 +1,11 @@
 <template>
-  <div class="mb-2">
+  <div class="mb-3">
     <input v-model="model"
       :type="type"
       :name="name"
-      v-validate="validate"
-      :data-vv-name="name"
+      v-validate.initial="validate"
       data-vv-as=" "
+      :data-vv-name="name"
       :placeholder="placeholder"
       class="form-control"
       :class="customClasses">
@@ -53,6 +53,8 @@ export default {
     displayedError () {
       const errors = this.errors;
       if (!errors || !errors.items || !errors.items.length) return null;
+      const field = this.fields[this.name];
+      if (!field || !field.touched) return null;
       const hasError = errors.items.find(item => item.field === this.name);
       if (hasError) return hasError.msg;
       return null;

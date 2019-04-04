@@ -8,6 +8,10 @@
         <ValidatingInput v-model="user.email" validate="required|email" placeholder="E-mail" name="email" />
         <ValidatingInput v-model="user.about" validate="max:50" placeholder="About" name="about" />
 
+        <ValidatingButton class="">Submit</ValidatingButton>
+
+        <hr />
+
         <pre>{{ user }}</pre>
       </div>
     </div>
@@ -18,22 +22,24 @@
 // import Codemirror from '../../components/Codemirror'
 // import ButtonPicker from '../../components/ButtonPicker'
 import ValidatingInput from '../../components/ValidatingInput'
+import ValidatingButton from '../../components/ValidatingButton'
 
 // import { buttonPickerSource, buttonPickerParentSource } from '../../data';
 
 export default {
-  data () {
+  data() {
     return {
       user: {
         username: '',
-        age: null,
+        age: '',
         email: '',
         about: ''
       }
     }
   },
   components: {
-    ValidatingInput
+    ValidatingInput,
+    ValidatingButton
   }
 }
 </script>

@@ -95,7 +95,7 @@ const pages = [
   {
     name: 'custom-validating-input',
     meta: {
-      title: 'Custom validating input'
+      title: 'Custom validating input and form'
     },
     component: CustomValidatingInput
   },
