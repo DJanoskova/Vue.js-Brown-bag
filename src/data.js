@@ -576,26 +576,16 @@ const myComponent = () => {
 }
 `
 
-export const validatingInputsExample = `<ValidatingInput v-model="user.username"
-  validate="required|min:4"
-  name="username" />
-  
-<ValidatingInput v-model="user.age"
-  validate="required|integer"
-  name="age" />
-  
-<ValidatingInput v-model="user.email"
-  validate="required|email"
-  name="email" />
-  
-<ValidatingInput v-model="user.about"
-  validate="max:50"
-  name="about" />
-  
-<ValidatingButton>Submit</ValidatingButton>`
+export const validatingInputsExample = `<form @submit.prevent="handleSubmit">
+  <ValidatingInput v-model="user.username" validate="required|min:4" placeholder="Username" name="username" />
+  <ValidatingInput v-model="user.age" validate="required|integer" placeholder="Age" name="age" />
+  <ValidatingInput v-model="user.email" validate="required|email" placeholder="E-mail" name="email" />
+  <ValidatingInput v-model="user.about" validate="max:50" placeholder="About" name="about" />
+  <ValidatingButton class="">Submit</ValidatingButton>
+</form>`
 
 export const validatingInputSource = `<template>
-  <div class="mb-3">
+  <div>
     <input v-model="model"
       :type="type"
       :name="name"
@@ -700,11 +690,6 @@ export default {
     disabled: {
       type: Boolean,
       default: false
-    }
-  },
-  data() {
-    return {
-      children: []
     }
   }
 }
