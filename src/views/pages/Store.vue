@@ -3,10 +3,10 @@
     <div class="container mb-3">
       <div class="row mb-3">
         <div class="col-12 col-lg-6">
-          <UserForm />
+          <TodoForm />
         </div>
         <div class="col-12 col-lg-6">
-          <UserTable />
+          <TodoTable />
         </div>
       </div>
       <hr>
@@ -36,8 +36,8 @@
 import { storeSource, userFormSourceHtml, userFormSourceJs, userTableSourceHtml, userTableSourceJs } from '../../data';
 
 import Codemirror from '../../components/Codemirror';
-import UserForm from '../../components/UserForm';
-import UserTable from '../../components/UserTable';
+import TodoForm from '../../components/TodoForm';
+import TodoTable from '../../components/TodoTable';
 
 export default {
   data() {
@@ -51,8 +51,8 @@ export default {
   },
   components: {
     Codemirror,
-    UserForm,
-    UserTable
+    TodoForm,
+    TodoTable
   }
 }
 </script>

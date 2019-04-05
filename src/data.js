@@ -313,29 +313,29 @@ export default new Vuex.Store({
     users: []
   },
   mutations: {
-    USERS_SET(state, users) {
+    TODOS_SET(state, users) {
       state.users = users
     },
-    USER_ADD(state, user) {
+    TODO_ADD(state, user) {
       state.users.push(user)
     },
-    USER_REMOVE(state, userId) {
+    TODO_REMOVE(state, userId) {
       const index = findIndex(state.users, { id: userId })
       state.users.splice(index, 1)
     }
   },
   actions: {
-    async USERS_GET (context) {
+    async TODOS_GET (context) {
       try {
         const response = await axios.get('/users.json')
         const normalized = objectToArray(response.data)
-        context.commit('USERS_SET', normalized)
+        context.commit('TODOS_SET', normalized)
         return response.data
       } catch(e) {
         throw e
       }
     },
-    async USER_CREATE (context, user) {
+    async TODO_CREATE (context, user) {
       try {
         const response = await axios.post('/users.json', user)
         const id = response.data.name
@@ -343,16 +343,16 @@ export default new Vuex.Store({
           id,
           ...user
         }
-        context.commit('USER_ADD', newUser)
+        context.commit('TODO_ADD', newUser)
         return newUser
       } catch(e) {
         throw e
       }
     },
-    async USER_DELETE (context, userId) {
+    async TODO_DELETE (context, userId) {
       try {
         await axios.delete('/users/' + userId + '.json')
-        context.commit('USER_REMOVE', userId)
+        context.commit('TODO_REMOVE', userId)
       } catch(e) {
         throw e
       }
@@ -371,9 +371,9 @@ export default new Vuex.Store({
 export const userFormSourceHtml = `<template>
   <form @submit.prevent="handleSubmit">
     <input type="text" v-model="model.name">
-    <input type="password" v-model="model.password">
+    <input type="text" v-model="model.description">
     <button type="submit"
-      :disabled="!model.name || !model.password">
+      :disabled="!model.name || !model.description">
       Save
     </button>
   </form>
@@ -387,19 +387,19 @@ export default {
     return {
       model: {
         name: '',
-        password: ''
+        description: ''
       }
     }
   },
   methods: {
     ...mapActions([
-      'USERS_GET',
-      'USER_CREATE'
+      'TODOS_GET',
+      'TODO_CREATE'
     ]),
     async handleSubmit() {
       try {
-        const response = await this.USER_CREATE(this.model)
-        console.log('New user has been created!', response)
+        const response = await this.TODO_CREATE(this.model)
+        console.log('New todo has been created!', response)
         this.resetModel()
       } catch (e) {
         console.log('Error', e)
@@ -407,25 +407,28 @@ export default {
     },
     resetModel() {
       this.model.name = ''
-      this.model.password = ''
+      this.model.description = ''
     }
   },
   mounted() {
-    this.USERS_GET()
+    this.TODOS_GET()
   }
 }
 </script>`
 
 export const userTableSourceHtml = `<template>
   <table>
-    <tr v-for="user in users" :key="user.id">
+    <tr v-for="todo in todos" :key="todo.id">
       <td>
-        {{ user.name }}
+        {{ todo.name }}
+      </td>
+      <td>
+        {{ todo.description }}
       </td>
       <td>
         <button type="button"
-          @click="handleDelete(user.id)">
-          Kill
+          @click="handleDelete(todo.id)">
+          Finish
         </button>
       </td>
     </tr>
@@ -438,15 +441,15 @@ import { mapActions, mapGetters } from 'vuex'
 export default {
   methods: {
     ...mapActions([
-      'USER_DELETE'
+      'TODO_DELETE'
     ]),
-    handleDelete(userId) {
-      this.USER_DELETE(userId)
+    handleDelete(todoId) {
+      this.TODO_DELETE(todoId)
     }
   },
   computed: {
     ...mapGetters([
-      'users'
+      'todos'
     ])
   }
 }

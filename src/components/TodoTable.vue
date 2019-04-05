@@ -2,21 +2,24 @@
   <table class="table table-hover table-sm" style="width: 100%">
     <thead>
     <tr>
-      <th colspan="2" class="pl-2">
-        User
+      <th colspan="3" class="pl-2">
+        Todo
       </th>
     </tr>
     </thead>
     <tbody>
-    <tr v-for="user in users" :key="user.id">
+    <tr v-for="todo in todos" :key="todo.id">
       <td class="pl-2">
-        {{ user.name }}
+        {{ todo.name }}
+      </td>
+      <td class="pl-2 small tetx-muted">
+        {{ todo.description }}
       </td>
       <td class="text-right">
         <button type="button"
           class="btn btn-outline-danger btn-sm"
-          @click="handleDelete(user.id)">
-          Kill
+          @click="handleDelete(todo.id)">
+          Finish
         </button>
       </td>
     </tr>
@@ -30,15 +33,15 @@ import { mapActions, mapGetters } from 'vuex'
 export default {
   methods: {
     ...mapActions([
-      'USER_DELETE'
+      'TODO_DELETE'
     ]),
     handleDelete(userId) {
-      this.USER_DELETE(userId)
+      this.TODO_DELETE(userId)
     }
   },
   computed: {
     ...mapGetters([
-      'users'
+      'todos'
     ])
   }
 }

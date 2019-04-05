@@ -12,57 +12,57 @@ axios.defaults.baseURL = 'https://vue-brown-bag.firebaseio.com/'
 
 export default new Vuex.Store({
   state: {
-    users: []
+    todos: []
   },
   mutations: {
-    USERS_SET(state, users) {
-      state.users = users
+    TODOS_SET(state, todos) {
+      state.todos = todos
     },
-    USER_ADD(state, user) {
-      state.users.push(user)
+    TODO_ADD(state, todo) {
+      state.todos.push(todo)
     },
-    USER_REMOVE(state, userId) {
-      const index = findIndex(state.users, { id: userId })
-      state.users.splice(index, 1)
+    TODO_REMOVE(state, todoId) {
+      const index = findIndex(state.todos, { id: todoId })
+      state.todos.splice(index, 1)
     }
   },
   actions: {
-    async USERS_GET (context) {
+    async TODOS_GET (context) {
       try {
-        const response = await axios.get('/users.json')
+        const response = await axios.get('/todos.json')
         const normalized = objectToArray(response.data)
-        context.commit('USERS_SET', normalized)
+        context.commit('TODOS_SET', normalized)
         return response.data
       } catch(e) {
         throw e
       }
     },
-    async USER_CREATE (context, user) {
+    async TODO_CREATE (context, todo) {
       try {
-        const response = await axios.post('/users.json', user)
+        const response = await axios.post('/todos.json', todo)
         const id = response.data.name
         const newUser = {
           id,
-          ...user
+          ...todo
         }
-        context.commit('USER_ADD', newUser)
+        context.commit('TODO_ADD', newUser)
         return newUser
       } catch(e) {
         throw e
       }
     },
-    async USER_DELETE (context, userId) {
+    async TODO_DELETE (context, todoId) {
       try {
-        await axios.delete(`/users/${userId}.json`)
-        context.commit('USER_REMOVE', userId)
+        await axios.delete(`/todos/${todoId}.json`)
+        context.commit('TODO_REMOVE', todoId)
       } catch(e) {
         throw e
       }
     }
   },
   getters: {
-    users (state) {
-      return state.users
+    todos (state) {
+      return state.todos
     }
   }
 })
