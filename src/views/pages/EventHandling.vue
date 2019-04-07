@@ -6,6 +6,12 @@
       </span>
       <pre>{{ example.code }}</pre>
     </div>
+
+    <p>
+      <a href="https://vuejs.org/v2/guide/events.html" target="_blank">
+        Read more
+      </a>
+    </p>
   </div>
 </template>
 
