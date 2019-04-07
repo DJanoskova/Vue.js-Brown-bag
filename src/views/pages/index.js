@@ -1,7 +1,7 @@
 import VuejsVsReact from './VuejsVsReact'
 import IsVueHard from './IsVueHard'
 import Introduction from './Introduction'
-import WhoUsesVue from './WhoUsesVue'
+import EventHandling from './EventHandling'
 import Lifecycle from './Lifecycle'
 import Computed from './Computed'
 import Components from './CustomComponents'
@@ -12,6 +12,7 @@ import Watch from './Watch'
 import CustomVModel from './CustomVModel'
 import CustomValidatingInput from './CustomValidatingInput'
 import Store from './Store'
+import WhoUsesVue from './WhoUsesVue'
 import Links from './Links'
 
 const pages = [
@@ -35,6 +36,13 @@ const pages = [
       title: 'Introduction to Vue.js'
     },
     component: Introduction
+  },
+  {
+    name: 'event-handling',
+    meta: {
+      title: 'Event handling'
+    },
+    component: EventHandling
   },
   {
     name: 'lifecycle',
